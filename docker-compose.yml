@@ -1,19 +1,22 @@
-version: "3"
+version: "3.7"
 
 services:
-  app-repo:
+  aj-backend:
     build:
       context: ./
-    container_name: app-repo
+      dockerfile: Dockerfile
+    container_name: aj-backend
     tty: true
     entrypoint: sh ./.docker/entrypoint.sh
+    environment:
+      PORT: 3030
     ports:
-      - 3010:3010
+      - 3030:3030
     volumes:
-      - ./:/usr/app-repo/app
+      - ./:/usr/aj-backend/app
     networks:
-      - app-repo
+      - aj-backend
 
 networks:
-  app-repo:
+  aj-backend:
     driver: bridge

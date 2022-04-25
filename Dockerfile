@@ -1,10 +1,8 @@
-FROM node:14.16.1-alpine
+FROM node:17.9.0-alpine3.15
 
-USER root
+WORKDIR /usr/aj-backend/app
 
-WORKDIR /usr/app-repo/app
-
-RUN apk update && apk add --no-cache -q bash
+RUN apk add --no-cache -q bash
 
 COPY package*.json ./
 
@@ -12,4 +10,4 @@ RUN npm install --silent
 
 COPY . .
 
-EXPOSE 3010
+EXPOSE 3030

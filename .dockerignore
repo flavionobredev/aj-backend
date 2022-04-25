@@ -1,0 +1,13 @@
+# npm
+node_modules
+
+# others
+docker-compose*.yml
+
+# hiden files
+.husky
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc
