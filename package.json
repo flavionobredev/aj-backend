@@ -51,6 +51,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^5.0.2",
+    "mongoose": "^6.3.1",
     "rimraf": "^3.0.2"
   },
   "_moduleAliases": {
