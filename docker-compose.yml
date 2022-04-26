@@ -10,6 +10,7 @@ services:
     entrypoint: sh ./.docker/entrypoint.sh
     environment:
       PORT: 3030
+      MONGO_DB_URI: "mongodb+srv://${AJ_MONGO_USER}:${AJ_MONGO_PASS}@armarinho-cluster-1.65mpi.mongodb.net/core?retryWrites=true&w=majority"
     ports:
       - 3030:3030
     volumes:

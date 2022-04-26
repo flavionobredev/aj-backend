@@ -1,3 +1,4 @@
+import { MongoUtil } from '@/infra/database/mongodb/mongo-connect';
 import express, { Express } from 'express';
 import helmet from 'helmet';
 import { readdirSync } from 'node:fs';
@@ -31,6 +32,7 @@ export class App {
 
   async initialiaze() {
     await this.initRoutes();
+    await MongoUtil.connect(process.env.MONGO_DB_URI as string);
     return this.app;
   }
 }
