@@ -1,4 +1,4 @@
-import { Exception } from '../protocols/exceptions/exception';
+import { Exception } from '../protocols/exception';
 
 export class HttpException extends Error implements Exception {
   public messages!: string | string[];

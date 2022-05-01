@@ -1,4 +1,5 @@
 import { MongoUtil } from '@/infra/database/mongodb/mongo-connect';
+import { makeExceptionHandler } from '@/presentation/middlewares/exceptions/http-exception';
 import express, { Express } from 'express';
 import helmet from 'helmet';
 import { readdirSync } from 'node:fs';
@@ -14,6 +15,7 @@ export class App {
 
   setMiddlewares() {
     this.app.use(helmet());
+    this.app.use(makeExceptionHandler())
   }
 
   async initRoutes() {
@@ -24,7 +26,7 @@ export class App {
     const appRouter = express.Router();
     this.app.use('/api', appRouter);
     readdirSync(join(__dirname, '../routes')).map(async (file) => {
-      if (!file.endsWith('.map')) {
+      if (!file.includes('general.ts') && !file.endsWith('.map')) {
         (await import(`../routes/${file}`)).default(appRouter);
       }
     });

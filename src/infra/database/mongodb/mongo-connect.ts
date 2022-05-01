@@ -1,3 +1,4 @@
+import { Logger } from '@/utils/logger';
 import {
   connection,
   connect,
@@ -10,19 +11,19 @@ import {
 export class MongoUtil {
   static async connect(url: string) {
     connection.on('connecting', () =>
-      console.log('[MongoUtil] connecting to MongoDB...'),
+      Logger.info('[MongoUtil] connecting to MongoDB...'),
     );
     connection.on('connected', () =>
-      console.log('[MongoUtil] connected with MongoDB!'),
+      Logger.info('[MongoUtil] connected with MongoDB!'),
     );
     connection.on('disconnected', () =>
-      console.log('[MongoUtil] disconnected to MongoDB'),
+      Logger.warn('[MongoUtil] disconnected to MongoDB'),
     );
     connection.on('close', () =>
-      console.log('[MongoUtil] close MongoDB connection'),
+      Logger.warn('[MongoUtil] close MongoDB connection'),
     );
     connection.on('error', (err) =>
-      console.log('[MongoUtil] MongoDB error', err),
+      Logger.fatal('[MongoUtil] MongoDB error', err),
     );
     return connect(url as string, {
       autoIndex: false,

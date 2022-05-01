@@ -1,4 +1,4 @@
-import { HttpException } from '@/presentation/errors/http-exception';
+import { HttpException } from '@/errors/exceptions/http-exception';
 import { Logger } from '@/utils/logger';
 import { NextFunction, Request, Response } from 'express';
 
