@@ -1,4 +1,4 @@
-import { Product } from './products';
+import { Size } from '../models/sizes.model';
 
 /**
  * Esta entidade está relacionada ao modelo de dados de uma campanha.
@@ -49,5 +49,30 @@ export namespace Campaing {
     FINISHED = 'FINISHED',
   }
 
-  export type CampaingProduct = Omit<Product, 'description'>;
+  export type CampaingProduct = {
+    /**
+     * Nome do produto
+     */
+    name: string;
+
+    /**
+     * Valor do produto
+     */
+    finalPrice: number;
+
+    /**
+     * Valor do produto no fornecedor/distribuidora
+     */
+    supplierPrice: number;
+
+    /**
+     * Tamanho do produto no caso de roupas
+     */
+    size?: Size.AllSizes;
+
+    /**
+     * Referencia do produto
+     */
+    ref: string;
+  };
 }

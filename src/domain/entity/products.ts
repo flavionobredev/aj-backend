@@ -1,3 +1,4 @@
+import { Size } from '../models/sizes.model'
 /**
  * Entidade para produtos dos fornecedores.
  * Esta entidade contém dados que são comuns a todos os fornecedores,
@@ -14,39 +15,17 @@ export interface Product {
   description: string;
 
   /**
-   * Valor do produto
+   * Id do fornecedor/distribuidora
    */
-  price: number;
+  supplier: string;
 
   /**
    * Tamanho do produto no caso de roupas
    */
-  size?: Product.Sizes;
+  size?: Size.AllSizes;
 
   /**
    * Referencia do produto
    */
   ref: string;
-}
-
-export namespace Product {
-  export type ClothingSize = 'PP' | 'P' | 'M' | 'G' | 'GG' | 'XG';
-  export type BootSize =
-    | 32
-    | 33
-    | 34
-    | 35
-    | 36
-    | 37
-    | 38
-    | 39
-    | 40
-    | 41
-    | 42
-    | 43
-    | 44
-    | 45
-    | 46;
-
-  export type Sizes = ClothingSize | BootSize;
 }
