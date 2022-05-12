@@ -11,7 +11,7 @@ export namespace FindAllSupplier {
   export type Params = {
     limit: number;
     page: number;
-    projection?: string | object;
+    projection: string | object;
   };
   export type Result = Pagination.Result<Supplier>;
 }

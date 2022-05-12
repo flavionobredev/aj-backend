@@ -9,9 +9,9 @@ export interface FindAllSupplierRepository {
 
 export namespace FindAllSupplierRepository {
   export type Params = {
-    projection?: string | object;
-    page?: number;
-    limit?: number;
+    projection: string | object;
+    page: number;
+    limit: number;
   };
 
   export type Result = Pagination.Result<Supplier>;
