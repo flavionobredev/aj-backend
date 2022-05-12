@@ -20,6 +20,7 @@ export class HttpAddSupplierController implements Controller {
       description: request.description,
       userCode: request.userCode,
       products: request.products || [],
+      banner: request.img || '',
     }).catch(err => {
       throw serverError(err)
     });
@@ -34,5 +35,6 @@ export namespace HttpAddSupplierController {
     description: string;
     userCode: string;
     products: string[];
+    img: string;
   }
 }

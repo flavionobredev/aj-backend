@@ -23,6 +23,10 @@ const schema = MongoUtil.createSchema<SupplierDocument>({
     type: [String],
     default: [],
   },
+  banner: {
+    type: String,
+    default: '',
+  }
 });
 
 export const SupplierModel = MongoUtil.createModel<SupplierDocument>(

@@ -23,4 +23,9 @@ export interface Supplier {
    * Ids dos produtos do fornecedor/distribuidora
    */
   products: string[]
+
+  /**
+   * Link da imagem do fornecedor/distribuidora
+   */
+  banner?: string;
 }
