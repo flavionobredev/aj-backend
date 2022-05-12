@@ -14,8 +14,10 @@ export class App {
   }
 
   setMiddlewares() {
-    this.app.use(helmet());
+    // this.app.use(helmet());
     this.app.use(makeExceptionHandler())
+    this.app.disable('x-powered-by');
+    this.app.use(express.json({limit: '100kb'}))
   }
 
   async initRoutes() {

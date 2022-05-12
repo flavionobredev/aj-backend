@@ -26,7 +26,6 @@ export class MongoUtil {
       Logger.fatal('[MongoUtil] MongoDB error', err),
     );
     return connect(url as string, {
-      autoIndex: false,
       socketTimeoutMS: 1 * 1000,
       family: 4,
       serverSelectionTimeoutMS: 15 * 1000,

@@ -8,6 +8,7 @@ const schema = MongoUtil.createSchema<SupplierDocument>({
   userCode: {
     type: String,
     required: true,
+    unique: true
   },
   name: {
     type: String,
