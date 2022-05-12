@@ -6,6 +6,7 @@ import {
   SchemaDefinition,
   SchemaDefinitionType,
   model,
+  SchemaOptions
 } from 'mongoose';
 
 export class MongoUtil {
@@ -34,8 +35,9 @@ export class MongoUtil {
 
   static createSchema<T>(
     definition: SchemaDefinition<SchemaDefinitionType<T>>,
+    options?: SchemaOptions
   ): Schema<T> {
-    return new Schema(definition);
+    return new Schema(definition, options);
   }
 
   static createModel<T>(collectionName: string, schema: Schema<T>) {

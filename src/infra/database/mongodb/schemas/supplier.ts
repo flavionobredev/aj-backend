@@ -27,7 +27,7 @@ const schema = MongoUtil.createSchema<SupplierDocument>({
     type: String,
     default: '',
   }
-});
+}, {timestamps: {createdAt: true, updatedAt: true}});
 
 export const SupplierModel = MongoUtil.createModel<SupplierDocument>(
   'suppliers',
